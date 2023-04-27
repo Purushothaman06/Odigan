@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "211690327785",
+    "project_id": "odigan-d3cf8",
+    "storage_bucket": "odigan-d3cf8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:211690327785:android:f8adfd7195317de638ea78",
+        "android_client_info": {
+          "package_name": "com.example.odigan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "211690327785-6qbfjsg0liu4md22ivn3l9rq8g4e3s65.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.odigan",
+            "certificate_hash": "37b54426422ea23ecdd936f06aea1360e2942575"
+          }
+        },
+        {
+          "client_id": "211690327785-8s0g74oul9co9iga9b5v5b1k3g6k77u4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCCiHur_d6bsfK47zbh0s7yTudH5Lyelo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "211690327785-8s0g74oul9co9iga9b5v5b1k3g6k77u4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "211690327785-0pqdodihhqikjgu3o3qtehriphfije17.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.odigan"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
