@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:odigan/pages/qrcode_create_page.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
@@ -68,8 +67,6 @@ class _QRCodeScannerState extends State<QRCodeScanner> {
       });
       await controller.pauseCamera();
       await flutterTts.speak(result);
-      Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (BuildContext context) => QRCodeGenerator()));
       await controller.resumeCamera();
     });
   }
