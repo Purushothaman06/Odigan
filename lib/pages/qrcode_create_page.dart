@@ -119,7 +119,8 @@ class _QRCodeGenerator extends State<QRCodeGenerator> {
 
               Center(
                 child: QrImage(
-                  data: '$_medicineName\n$_medicineDosage\n$_medicineDescription',
+                  data:
+                      '$_medicineName\t$_medicineDescription',
                   version: QrVersions.auto,
                   size: 200.0,
                 ),

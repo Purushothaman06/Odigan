@@ -66,6 +66,11 @@ class _QRCodeScannerState extends State<QRCodeScanner> {
         result = scanData.code!;
       });
       await controller.pauseCamera();
+      await flutterTts.setLanguage("en-US");
+      await flutterTts.getMaxSpeechInputLength;
+      await flutterTts.setVolume(1.5);
+      await flutterTts.setPitch(1.0);
+      await flutterTts.setSpeechRate(0.5); // speak slowly
       await flutterTts.speak(result);
       await controller.resumeCamera();
     });
