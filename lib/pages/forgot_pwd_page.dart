@@ -55,7 +55,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
           ),
           // email textfield
 
-          const SizedBox(height: 20),
+          const SizedBox(height: 25),
 
           MyTextField(
             controller: _emailController,
@@ -63,7 +63,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
             obscureText: false,
           ),
 
-          const SizedBox(height: 20),
+          const SizedBox(height: 25),
 
           ElevatedButton(
             onPressed: passwordReset,
@@ -75,9 +75,9 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
               ),
             ),
             style: ElevatedButton.styleFrom(
-                minimumSize: Size(250, 70),
+                minimumSize: Size(350, 60),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(50),
+                  borderRadius: BorderRadius.circular(20),
                 ),
               ),
           )
