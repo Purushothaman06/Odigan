@@ -41,7 +41,7 @@ dependencies:
   qr_flutter: ^4.0.0
   qr_code_scanner: ^1.0.1
   google_sign_in: ^6.0.2
-
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter

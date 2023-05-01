@@ -17,13 +17,15 @@ class _QRCodeScannerState extends State<QRCodeScanner> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'QR Code Scanner',
-          style: TextStyle( 
-            fontSize: 24,
-            color: Colors.black,
+          title: Center(
+            child: const Text(
+              'QR SCANNER',
+              style: TextStyle(
+                fontSize: 24,
+                color: Colors.black,
+              ),
+            ),
           ),
-        )
       ),
       body: Stack(
         children: <Widget>[
@@ -34,13 +36,8 @@ class _QRCodeScannerState extends State<QRCodeScanner> {
             right: 0,
             child: Container(
               margin: EdgeInsets.symmetric(horizontal: 20),
-              child: Text(
-                'Result: $result',
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 16),
-              ),
             ),
-          )
+          ),
         ],
       ),
     );
@@ -51,10 +48,10 @@ class _QRCodeScannerState extends State<QRCodeScanner> {
       key: _qrKey,
       onQRViewCreated: _onQRViewCreated,
       overlay: QrScannerOverlayShape(
-        borderColor: Colors.blue,
-        borderRadius: 10,
+        borderColor: Colors.white,
+        borderRadius: 5,
         borderLength: 30,
-        borderWidth: 10,
+        borderWidth: 5,
       ),
     );
   }
@@ -66,14 +63,56 @@ class _QRCodeScannerState extends State<QRCodeScanner> {
         result = scanData.code!;
       });
       await controller.pauseCamera();
-      await flutterTts.setLanguage("en-US");
-      await flutterTts.getMaxSpeechInputLength;
-      await flutterTts.setVolume(1.5);
-      await flutterTts.setPitch(1.0);
-      await flutterTts.setSpeechRate(0.5); // speak slowly
-      await flutterTts.speak(result);
-      await controller.resumeCamera();
+      showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text(
+              'RESULT',
+              style: TextStyle(
+                fontSize: 22,
+                color: Colors.black,
+              ),
+            ),
+            content: Text(result),
+            actions: [
+              TextButton(
+                child: Text(
+                  'SPEAK',
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.black,
+                  ),
+                ),
+                onPressed: speakContent,
+              ),
+              TextButton(
+                child: Text(
+                  'CLOSE',
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.black,
+                  ),
+                ),
+                onPressed: () {
+                  controller.resumeCamera();
+                  Navigator.pop(context);
+                },
+              ),
+            ],
+          );
+        },
+      );
     });
+  }
+
+  void speakContent() async {
+    await flutterTts.setLanguage("en-US");
+    await flutterTts.getMaxSpeechInputLength;
+    await flutterTts.setVolume(1.0);
+    await flutterTts.setPitch(1.0);
+    await flutterTts.setSpeechRate(0.3); // speak slowly
+    await flutterTts.speak(result);
   }
 
   @override

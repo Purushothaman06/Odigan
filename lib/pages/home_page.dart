@@ -22,17 +22,20 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Odigan - Med Finder',
-          style: TextStyle( 
-            fontSize: 24,
-            color: Colors.black,
+        title: Center(
+          child: const Text(
+            'ODIGAN - MED FINDER',
+            style: TextStyle( 
+              fontSize: 24,
+              color: Colors.black,
+            ),
           ),
         ),
         actions: [
           IconButton(
             onPressed: signUserOut,
-            icon: const Icon(Icons.logout),
+            icon: const Icon(Icons.logout_rounded),
+            color: Colors.black,
           )
         ],
       ),
@@ -50,7 +53,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
 
-          SizedBox(height: 32),
+          SizedBox(height: 35),
 
           Center(
             child: Column(
@@ -65,7 +68,7 @@ class _HomePageState extends State<HomePage> {
                           builder: (context) => QRCodeScanner()));
                     },
                   child: Text(
-                    'Scan QR',
+                    'SCAN QR',
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 24,
@@ -73,16 +76,14 @@ class _HomePageState extends State<HomePage> {
                   ),
 
                   style: ElevatedButton.styleFrom(
-                    minimumSize: Size(300, 70),
+                    minimumSize: Size(350, 60),
                      shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50),
+                      borderRadius: BorderRadius.circular(20),
                     ),
                   ),
                 ),
 
-                SizedBox(width: 25),
-
-                SizedBox(height: 35),
+                SizedBox(height: 45),
 
                 ElevatedButton(
                   onPressed: () {
@@ -94,7 +95,7 @@ class _HomePageState extends State<HomePage> {
                       );
                   },
                   child: Text(
-                    'Create QR',
+                    'CREATE QR',
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 24,
@@ -102,9 +103,9 @@ class _HomePageState extends State<HomePage> {
                   ),
 
                   style: ElevatedButton.styleFrom(
-                    minimumSize: Size(300, 70),
+                    minimumSize: Size(350, 60),
                      shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50),
+                      borderRadius: BorderRadius.circular(20),
                     ),
                   ),
                 ),
