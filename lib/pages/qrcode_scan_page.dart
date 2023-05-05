@@ -17,15 +17,15 @@ class _QRCodeScannerState extends State<QRCodeScanner> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Center(
-            child: const Text(
-              'QR SCANNER',
-              style: TextStyle(
-                fontSize: 24,
-                color: Colors.black,
-              ),
+        title: Center(
+          child: const Text(
+            'QR SCANNER',
+            style: TextStyle(
+              fontSize: 24,
+              color: Colors.black,
             ),
           ),
+        ),
       ),
       body: Stack(
         children: <Widget>[
@@ -63,6 +63,7 @@ class _QRCodeScannerState extends State<QRCodeScanner> {
         result = scanData.code!;
       });
       await controller.pauseCamera();
+      await flutterTts.speak("QR Code Detected");
       showDialog(
         context: context,
         builder: (context) {
